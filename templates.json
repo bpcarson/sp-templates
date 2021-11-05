@@ -1,6 +1,38 @@
 {
 	"version": "2",
 	"templates": [
+		{
+      "type": 1,
+      "title": "Jupyter Notebook",
+      "name": "jupyter",
+      "description": "Jupyter scipy notebook, containing Numpy and Pandas for data science / data analsis purposes.",
+      "image": "jupyter/scipy-notebook",
+      "categories": [
+        "Data Science"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        "10000:8888/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/home/jovyan/"
+        }
+      ],
+      "env": [
+        {
+          "name": "NB_UID",
+          "label": "NB_UID",
+          "default": "1000"
+        },
+        {
+          "name": "NB_GID",
+          "label": "NB_GID",
+          "default": "100"
+        }
+      ]
+    },
   {
 			"type": 1,
 			"title": "Cloud9",
